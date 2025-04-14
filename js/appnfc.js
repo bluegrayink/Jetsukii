@@ -1,5 +1,7 @@
 const uidToPageMap = {
-    "event.html":["04DE5AA0672681","EDELYN00ACC","PUNI00ACC","OLA00ACC","MATCHA00ACC"]
+    "klee.html":["F625391A","26586B1A","JET00KLEE"],
+    "zeta.html":["26356B1A","D6C7711A","JET00ZETA"],
+    "calendar.html":["86F56F1A","5605761A","JET00CAL"],
 };
 
 // Elements
