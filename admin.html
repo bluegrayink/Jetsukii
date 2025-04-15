@@ -25,7 +25,7 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        #buttonContainer { display: none; }
+    /*     #buttonContainer { display: none; } */
     </style>
 </head>
 
@@ -69,9 +69,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
                     <div id="buttonContainer">
-                      <button id="kleeButton">Klee</button>
-                      <button id="zetaButton">Zeta</button>
-                      <button id="calendarButton">Calendar</button>
+                       <div class="col-12 text-center mb-2">
+                           <ul class="list-inline mb-4" id="portfolio-flters">
+                                <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" id="kleeButton">Klee</li>
+                                <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" id="zetaButton">Zeta</li>
+                                <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" id="calendarButton">Calendar</li>
+                            </ul>
+                        </div>
                     </div>
                     
                   <!-- Status and logs for user interaction -->
