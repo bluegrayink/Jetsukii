@@ -61,10 +61,9 @@ const startNFCScan = async () => {
 
 // Event listeners
 androidButton.addEventListener("click", startNFCScan);
-iosButton.addEventListener("click", () => {
-    uidInputContainer.style.display = "block";
-    setStatus("Please enter your UID");
-});
+
+uidInputContainer.style.display = "block";
+setStatus("Please enter your UID");
 submitUID.addEventListener("click", () => validateUID(uidInput.value));
 
 // Event listeners for direct page navigation
