@@ -3,12 +3,13 @@ const validUIDs = ["F693361A","761A371A"];
 
 // Elements
 const androidButton = document.getElementById("androidButton");
-const iosButton = document.getElementById("iosButton");
+// const iosButton = document.getElementById("iosButton");
 const uidInputContainer = document.getElementById("uidInputContainer");
 const uidInput = document.getElementById("uidInput");
 const submitUID = document.getElementById("submitUID");
 const buttonContainer = document.getElementById("buttonContainer");
-const sparkleButton = document.getElementById("sparkleButton");
+const zetaButton = document.getElementById("zetaButton");
+const kleeButton = document.getElementById("kleeButton");
 const calendarButton = document.getElementById("calendarButton");
 const statusDiv = document.getElementById("status");
 
@@ -28,7 +29,6 @@ const validateUID = (rawUid) => {
     if (validUIDs.includes(uid)) {
         setStatus("Access granted. You can now navigate.");
         buttonContainer.style.display = "block";
-        uidInputContainer.style.display = "none";
     } else {
         setStatus("Access denied: Invalid UID.");
     }
