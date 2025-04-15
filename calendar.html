@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jetsukii</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="JETSUKII" name="keywords">
+    <meta content="ABOUT JETSUKII" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Navbar Start -->
+    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="font-secondary text-white mb-n2">Jetsukii</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto py-0">
+                <a href="#about" class="nav-item nav-link">About</a>
+            </div>
+            <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
+                <h1 class="font-secondary text-white mb-n2">Jetsukii</h1>
+            </a>
+            <div class="navbar-nav mr-auto py-0">
+                <a href="#gallery" class="nav-item nav-link">Gallery</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Video Modal Start -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>        
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container">
+            <div class="section-title position-relative text-center">
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">About Me</h6>
+                <h1 class="font-secondary display-4">Jetsukii</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            <div class="row m-0 mb-4 mb-md-0 pb-2 pb-md-0"> 
+                <div class="col-md-6 p-0" style="min-height: 400px;">
+                    <img class="position-absolute w-100 h-100" src="img/about1.jpg" style="object-fit: cover;">
+                </div>
+                <div class="col-md-6 p-0 text-center">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                        <p>Hello! I am Jetsukii and I am a full time cosplayer, content creator and gamer.
+ I love what I do and always strive to bring you the best of my works to the table. Thank you for your support!</p>
+                        <div class="position-relative">
+                            <a class="btn btn-outline-primary m-1" href="https://discord.com/invite/wsk5UqyqPJ"><i class="fab fa-discord"></i></a>
+                            <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/jetsukii/"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-primary m-1" href="https://www.tiktok.com/@jennifertheresia.jts"><i class="fab fa-tiktok"></i></a>
+                            <a class="btn btn-outline-primary m-1" href="https://m.facebook.com/JetsukiiCosplay"><i class="fab fa-facebook"></i></a>
+                            <a class="btn btn-outline-primary m-1" href="https://twitter.com/jetsukii"><i class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-outline-primary m-1" href="https://www.youtube.com/c/Jetsukii"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Gallery Start -->
+    <div class="container-fluid pb-5" id="gallery">
+        <div class="container">
+            <div class="section-title position-relative text-center">
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Gallery</h6>
+                <h1 class="font-secondary display-4">My Special Content</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h4 class="mb-3">Android</h4>
+                    <p class="mb-2">Click Scan and tap your NFC Card</p>
+                    <div class="mb-6 ml-md-3">
+                        <button id="scanButton" class="btn btn-primary font-weight-bold m-1 py-2 px-4" type="submit">Scan</button>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h4 class="m-3 pt-4">iOS</h4>
+                    <p class="mb-2">Scan QR code in the card for check the UID</p>
+                    <div class="form-group">
+                        <div class="form-group col-sm-6">
+                            <input type="text" id="uidInput" class="form-control bg-secondary border-0 py-4 px-3" placeholder="input the UID 
+
+Card" />
+                        </div>
+                    </div>
+                    <button id="submitUidButton" class="btn btn-primary font-weight-bold m-1 py-2 px-4" type="submit">Submit</button>
+                </div>
+            </div>
+            <div id="status"></div>
+            <div id="log"></div>
+        </div>
+    </div>
+    <!-- Gallery End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white py-3" id="contact" style="margin-top: 20px;">
+        <div class="container text-center py-3">
+            <p class="m-0">&copy; Designed by <a class="text-primary" href="#">Bluegray Ink</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Scroll to Bottom -->
+    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/appnfc.js"></script>
+    <script type="module">
+// Cegah Ctrl+U dan klik kanan
+    document.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey && e.key === 'u') || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+            e.preventDefault();
+            alert("Akses ini dibatasi.");
+        }
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        alert("Klik kanan dinonaktifkan.");
+    });
+</script>
+</body>
+</html>
