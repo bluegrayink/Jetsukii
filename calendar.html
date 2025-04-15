@@ -66,71 +66,34 @@
     </div>
     <!-- Video Modal End -->
 
-    <!-- About Start -->
+    <!-- Calendar Start -->
     <div class="container-fluid py-5" id="about">
         <div class="container">
             <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">About Me</h6>
-                <h1 class="font-secondary display-4">Jetsukii</h1>
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Calendar</h6>
+                <h1 class="font-secondary display-4">My Schedule Event</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="row m-0 mb-4 mb-md-0 pb-2 pb-md-0"> 
-                <div class="col-md-6 p-0" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/about1.jpg" style="object-fit: cover;">
-                </div>
-                <div class="col-md-6 p-0 text-center">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
-                        <p>Hello! I am Jetsukii and I am a full time cosplayer, content creator and gamer.
- I love what I do and always strive to bring you the best of my works to the table. Thank you for your support!</p>
-                        <div class="position-relative">
-                            <a class="btn btn-outline-primary m-1" href="https://discord.com/invite/wsk5UqyqPJ"><i class="fab fa-discord"></i></a>
-                            <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/jetsukii/"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary m-1" href="https://www.tiktok.com/@jennifertheresia.jts"><i class="fab fa-tiktok"></i></a>
-                            <a class="btn btn-outline-primary m-1" href="https://m.facebook.com/JetsukiiCosplay"><i class="fab fa-facebook"></i></a>
-                            <a class="btn btn-outline-primary m-1" href="https://twitter.com/jetsukii"><i class="fab fa-x-twitter"></i></a>
-                            <a class="btn btn-outline-primary m-1" href="https://www.youtube.com/c/Jetsukii"><i class="fab fa-youtube"></i></a>
+                <main class="container">
+                    <div class="calendar-container">
+                        <div id="calendar-header" class="calendar-header">
+                            <button id="prev-month">&lt;</button>
+                            <span id="header-title"></span>
+                            <button id="next-month">&gt;</button>
                         </div>
+                    <div id="day-row" class="day-row"></div>
+                    <div id="calendar-grid" class="calendar-grid"></div>
                     </div>
-                </div> 
+                <div id="event-list" class="event-list">
+                <h2>Event Details</h2>
+                <p></p>
+                </div>
+                </main>
             </div>
         </div>
     </div>
-    <!-- About End -->
-
-    <!-- Gallery Start -->
-    <div class="container-fluid pb-5" id="gallery">
-        <div class="container">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Gallery</h6>
-                <h1 class="font-secondary display-4">My Special Content</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h4 class="mb-3">Android</h4>
-                    <p class="mb-2">Click Scan and tap your NFC Card</p>
-                    <div class="mb-6 ml-md-3">
-                        <button id="scanButton" class="btn btn-primary font-weight-bold m-1 py-2 px-4" type="submit">Scan</button>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center">
-                    <h4 class="m-3 pt-4">iOS</h4>
-                    <p class="mb-2">Scan QR code in the card for check the UID</p>
-                    <div class="form-group">
-                        <div class="form-group col-sm-6">
-                            <input type="text" id="uidInput" class="form-control bg-secondary border-0 py-4 px-3" placeholder="input the UID 
-
-Card" />
-                        </div>
-                    </div>
-                    <button id="submitUidButton" class="btn btn-primary font-weight-bold m-1 py-2 px-4" type="submit">Submit</button>
-                </div>
-            </div>
-            <div id="status"></div>
-            <div id="log"></div>
-        </div>
-    </div>
-    <!-- Gallery End -->
+    <!-- Calendar End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white py-3" id="contact" style="margin-top: 20px;">
@@ -158,7 +121,7 @@ Card" />
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/appnfc.js"></script>
+    <script src="js/calendar.js"></script>
     <script type="module">
 // Cegah Ctrl+U dan klik kanan
     document.addEventListener('keydown', function (e) {
