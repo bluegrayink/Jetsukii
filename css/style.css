@@ -2662,7 +2662,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-primary {
   color: #FF6EC7;
-  /*  border-color: #FF6EC7; */
+  border-color: #FF6EC7;
 }
 
 .btn-outline-primary:hover {
