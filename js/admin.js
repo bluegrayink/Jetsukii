@@ -3,13 +3,12 @@ const validUIDs = ["F693361A","761A371A"];
 
 // Elements
 const androidButton = document.getElementById("androidButton");
-// const iosButton = document.getElementById("iosButton");
+const iosButton = document.getElementById("iosButton");
 const uidInputContainer = document.getElementById("uidInputContainer");
 const uidInput = document.getElementById("uidInput");
 const submitUID = document.getElementById("submitUID");
 const buttonContainer = document.getElementById("buttonContainer");
-const zetaButton = document.getElementById("zetaButton");
-const kleeButton = document.getElementById("kleeButton");
+const sparkleButton = document.getElementById("sparkleButton");
 const calendarButton = document.getElementById("calendarButton");
 const statusDiv = document.getElementById("status");
 
@@ -29,6 +28,7 @@ const validateUID = (rawUid) => {
     if (validUIDs.includes(uid)) {
         setStatus("Access granted. You can now navigate.");
         buttonContainer.style.display = "block";
+        uidInputContainer.style.display = "none";
     } else {
         setStatus("Access denied: Invalid UID.");
     }
@@ -61,6 +61,10 @@ const startNFCScan = async () => {
 
 // Event listeners
 androidButton.addEventListener("click", startNFCScan);
+iosButton.addEventListener("click", () => {
+    uidInputContainer.style.display = "block";
+    setStatus("Please enter your UID");
+});
 submitUID.addEventListener("click", () => validateUID(uidInput.value));
 
 // Event listeners for direct page navigation
