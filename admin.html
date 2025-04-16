@@ -25,7 +25,8 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-    /*     #buttonContainer { display: none; } */
+        #buttonContainer { display: none; }
+        #uidInputContainer { display: none; }
     </style>
 </head>
 
@@ -39,22 +40,22 @@
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h4 class="mb-3">Android</h4>
-                    <p class="mb-2">Click Scan and tap your NFC Card</p>
-                    <div class="mb-6 ml-md-3">
-                        <button id="androidButton" class="btn btn-primary font-weight-bold m-1 py-2 px-4" type="submit">Scan</button>
-                    </div>
+                <div class="row">
+                <div class="col-12 text-center mb-2">
+                    <ul class="list-inline mb-4" id="portfolio-flters">
+                        <li id="androidButton" class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" >Android</li>
+                        <li id="iosButton" class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" >iOS</li>
+                    </ul>
                 </div>
-                <div class="col-md-6 text-center">
-                    <h4 class="m-3 pt-4">iOS</h4>
+            </div>
+                <div id="uidInputContainer" class="col-md-6 text-center">
                     <p class="mb-2">Scan QR code in the card for check the UID</p>
                     <div class="form-group">
                         <div class="form-group col-sm-6">
                             <input type="text" id="uidInput" class="form-control bg-secondary border-0 py-4 px-3" placeholder="input the UID Card" />
                         </div>
                     </div>
-                    <button id="submitUidButton" class="btn btn-primary font-weight-bold m-1 py-2 px-4" type="submit">Submit</button>
+                    <button id="submitUid" class="btn btn-primary font-weight-bold m-1 py-2 px-4" type="submit">Submit</button>
                 </div>
             </div>
             <div id="status"></div>
