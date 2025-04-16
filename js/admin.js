@@ -8,7 +8,8 @@ const uidInputContainer = document.getElementById("uidInputContainer");
 const uidInput = document.getElementById("uidInput");
 const submitUID = document.getElementById("submitUID");
 const buttonContainer = document.getElementById("buttonContainer");
-const sparkleButton = document.getElementById("sparkleButton");
+const kleeButton = document.getElementById("kleeButton");
+const zetaButton = document.getElementById("zetaButton");
 const calendarButton = document.getElementById("calendarButton");
 const statusDiv = document.getElementById("status");
 
