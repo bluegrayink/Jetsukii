@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ff8496;
+    background-color: #FF6EC7;
     color: white;
     padding: 10px;
     font-size: 18px;
@@ -50,9 +50,9 @@
 }
 
 .calendar-cell {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s ease;
@@ -67,8 +67,8 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 16px;
-    height: 16px;
+    width: 30px;
+    height: 30px;
 }
 
 .calendar-cell.sunday {
@@ -76,16 +76,16 @@
 }
 
 .calendar-cell.event {
-    background-color: #ff8496;
+    background-color: #FF6EC7;
     color: white;
     font-weight: bold;
-	border-radius: 50%;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 16px;
-    height: 16px;
+    width: 30px;
+    height: 30px;
 }
 
 /* Event List */
@@ -105,7 +105,7 @@
     font-size: 14px;
 	 color: #4B4E53;
     background-color: #fff;
-    border: 1px solid #ff8496;
+    border: 1px solid #FF6EC7;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -116,7 +116,7 @@
 	font-size: 14px;
 	 color: #4B4E53;
     margin: 10px 0;
-    border: 1px solid #ff8496;
+    border: 1px solid #FF6EC7;
     border-radius: 8px;
     background-color: #fff;
 }
