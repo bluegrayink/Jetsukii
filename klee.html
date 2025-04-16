@@ -35,9 +35,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto py-0">
+                <a href="#photo" class="nav-item nav-link">Photo</a>
+            </div>
             <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
                 <h1 class="font-secondary text-white mb-n2">Jetsukii</h1>
             </a>
+            <div class="navbar-nav mr-auto py-0">
+                <a href="#video" class="nav-item nav-link">Video</a>
+                <a href="#audio" class="nav-item nav-link">Audio</a>
+            </div>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -193,6 +200,36 @@
                 <a href="img/Klee24.jpeg" data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery End -->
+    <!-- Gallery Start -->
+    <div class="container-fluid bg-gallery" id="video" style="padding: 120px 0;">
+        <div class="section-title position-relative text-center" style="margin-bottom: 120px;">
+            <h1 class="font-secondary display-4">Video Gallery</h1>
+            <i class="far fa-heart text-white"></i>
+        </div>
+        <div class="owl-carousel gallery-carousel">
+            <div class="gallery-item">
+                 <button type="button" class="btn-play mx-auto" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery End -->
+    <!-- Gallery Start -->
+    <div class="container-fluid bg-gallery" id="audio" style="padding: 120px 0;">
+        <div class="section-title position-relative text-center" style="margin-bottom: 120px;">
+            <h1 class="font-secondary display-4">Audio Gallery</h1>
+            <i class="far fa-heart text-white"></i>
+        </div>
+        <div class="owl-carousel gallery-carousel">
+             <div class="gallery-item">
+                <audio controls style="width: 300px; align: center;">
+                    <source src="/Ayuudesu/Audio/Pelempuan.mp3" type="audio/mpeg">
+                </audio>
             </div>
         </div>
     </div>
