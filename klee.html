@@ -95,6 +95,10 @@
 </head>
 
 <body style="background-color: #ffd0d7;">
+     <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="font-weight: bold; font-size: 20px;">Jetsukii</div>
+        <a href="index.html" style="text-decoration: none; color: black; font-size: 16px;">Home</a>
+    </header>
     <h1>Klee Halloween</h1>
     <div>
         <button id="photoButton">Photo</button>
@@ -105,31 +109,33 @@
     <div class="container">
         <!-- Photo gallery -->
         <div class="photo-gallery">
-            <img src="Photo/Klee/Klee01.JPEG" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee02.JPEG" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee03.JPEG" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee04.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee05.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee06.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee07.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee08.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee09.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee10.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee11.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee12.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee13.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee14.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee15.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee16.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee17.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee18.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee19.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee20.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee21.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee22.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee23.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee24.jpeg" alt="Kleejet" class="protected-img">
-            <img src="Photo/Klee/Klee25.jpg" alt="Kleejet" class="protected-img">
+            <div class="slideshow-container">
+                <img src="Photo/Klee/Klee01.JPEG" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee02.JPEG" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee03.JPEG" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee04.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee05.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee06.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee07.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee08.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee09.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee10.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee11.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee12.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee13.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee14.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee15.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee16.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee17.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee18.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee19.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee20.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee21.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee22.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee23.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee24.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee25.jpg" alt="Kleejet" class="protected-img">
+            </div>
         </div>
 
         <!-- Video gallery -->
@@ -152,5 +158,14 @@
             </audio>
         </div>
     </div>
+    <!-- Popup Image -->
+    <div id="popup" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+        <img id="popup-img" src="" alt="Popup" style="max-width: 95%; max-height: 95%; border-radius: 10px;">
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 15px; background-color: #fff; margin-top: 30px; font-size: 14px;">
+        Created and Design by <strong>Bluegray Ink</strong>
+    </footer>
 </body>
 </html>
