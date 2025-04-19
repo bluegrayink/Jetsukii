@@ -1,7 +1,7 @@
 const uidToPageMap = {
-    "klee.html": ["26586B1A", "F625391A", "Jet00Klee"],
-    "zeta.html": ["26356B1A", "D6C7711A", "Jet00Zeta"],
-    "calendar.html": ["5605761A","86F56F1A", "Jet00Cal"]
+    "klee.html": ["26586B1A", "F625391A", "JET00KLEE"],
+    "zeta.html": ["26356B1A", "D6C7711A", "JET00ZETA"],
+    "calendar.html": ["5605761A","86F56F1A", "JET00CAL"]
 };
 
 // Elements
