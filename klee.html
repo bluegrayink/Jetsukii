@@ -13,13 +13,13 @@
             display: none;
         }
 
-         .container {
+        .container {
             position: relative;
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         div.animated {
             position: absolute;
             visibility: hidden;
@@ -43,14 +43,13 @@
     document.addEventListener('DOMContentLoaded', () => {
         const referrer = document.referrer; 
         const allowedReferrers = ["index.html", "admin.html"];
-
         const isAllowedReferrer = allowedReferrers.some(page => referrer.includes(page));
+
         if (!isAllowedReferrer || !localStorage.getItem("isLoggedIn")) {
             window.location.href = "index.html"; 
         }
 
         const redirectTimeout = 1800000;
-
         setTimeout(() => {
             alert("Session expired. Redirecting to homepage...");
             window.location.href = "index.html";
@@ -64,6 +63,20 @@
 
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener('dragstart', event => event.preventDefault());
+
+            img.addEventListener('click', () => {
+                const popup = document.getElementById('popup');
+                const popupImg = document.getElementById('popup-img');
+                popupImg.src = img.src;
+                popup.classList.remove('hidden');
+            });
+        });
+
+        const popup = document.getElementById('popup');
+        popup.addEventListener('click', (e) => {
+            if (e.target.id === 'popup') {
+                popup.classList.add('hidden');
+            }
         });
 
         const galleries = {
@@ -85,20 +98,21 @@
         document.getElementById("videoButton").addEventListener("click", () => showContent('video-gallery'));
         document.getElementById("audioButton").addEventListener("click", () => showContent('audio-gallery'));
 
-        document.getElementById("logoutButton").addEventListener("click", () => {
+        document.getElementById("logoutButton")?.addEventListener("click", () => {
             sessionStorage.removeItem("accessGranted");
             localStorage.removeItem("isLoggedIn");
             window.location.href = "index.html";
         });
     });
-</script>
+    </script>
 </head>
 
 <body style="background-color: #ffd0d7;">
-     <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         <div style="font-weight: bold; font-size: 20px;">Jetsukii</div>
         <a href="index.html" style="text-decoration: none; color: black; font-size: 16px;">Home</a>
     </header>
+
     <h1>Klee Halloween</h1>
     <div>
         <button id="photoButton">Photo</button>
@@ -110,9 +124,10 @@
         <!-- Photo gallery -->
         <div class="photo-gallery">
             <div class="slideshow-container">
-                <img src="Photo/Klee/Klee01.JPEG" alt="Kleejet" class="protected-img">
-                <img src="Photo/Klee/Klee02.JPEG" alt="Kleejet" class="protected-img">
-                <img src="Photo/Klee/Klee03.JPEG" alt="Kleejet" class="protected-img">
+                <!-- Replace below with image list -->
+                <img src="Photo/Klee/Klee01.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee02.jpeg" alt="Kleejet" class="protected-img">
+                <img src="Photo/Klee/Klee03.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee04.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee05.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee06.jpeg" alt="Kleejet" class="protected-img">
@@ -129,12 +144,10 @@
                 <img src="Photo/Klee/Klee17.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee18.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee19.jpeg" alt="Kleejet" class="protected-img">
-                <img src="Photo/Klee/Klee20.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee21.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee22.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee23.jpeg" alt="Kleejet" class="protected-img">
                 <img src="Photo/Klee/Klee24.jpeg" alt="Kleejet" class="protected-img">
-                <img src="Photo/Klee/Klee25.jpg" alt="Kleejet" class="protected-img">
             </div>
         </div>
 
@@ -158,6 +171,7 @@
             </audio>
         </div>
     </div>
+
     <!-- Popup Image -->
     <div id="popup" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 9999;">
         <img id="popup-img" src="" alt="Popup" style="max-width: 95%; max-height: 95%; border-radius: 10px;">
