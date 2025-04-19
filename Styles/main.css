@@ -4,6 +4,13 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 h1 {
@@ -117,7 +124,7 @@ button:hover {
 .protected-img, .protected-video {
     user-select: none;
     -webkit-user-drag: none;
-    pointer-events: none; /* Prevent right-click */
+    pointer-events: none;
 }
 
 /* Hidden sections */
@@ -190,6 +197,9 @@ div.animated {
 /* Header & Footer */
 header {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -207,13 +217,12 @@ header .home {
 }
 
 footer {
-    position: fixed;
     text-align: center;
     padding: 15px;
     background-color: #ffbac5;
-    margin-top: 30px;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    margin-top: auto;
 }
 
 /* Photo gallery image */
