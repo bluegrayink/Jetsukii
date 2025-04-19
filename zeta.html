@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Jetsukii</title>
+    <link rel="stylesheet" href="../Jetsukii/Styles/main.css">
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+         .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        div.animated {
+            position: absolute;
+            visibility: hidden;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(0);}
+            to {opacity: 1; transform: translateY(20px); visibility: visible;}
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const referrer = document.referrer; 
+        const allowedReferrers = ["index.html", "admin.html"];
+
+        const isAllowedReferrer = allowedReferrers.some(page => referrer.includes(page));
+        if (!isAllowedReferrer || !localStorage.getItem("isLoggedIn")) {
+            window.location.href = "index.html"; 
+        }
+
+        const redirectTimeout = 1800000;
+
+        setTimeout(() => {
+            alert("Session expired. Redirecting to homepage...");
+            window.location.href = "index.html";
+        }, redirectTimeout);
+
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                e.preventDefault();
+            }
+        });
+
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', event => event.preventDefault());
+        });
+
+        const galleries = {
+            'photo-gallery': document.querySelector('.photo-gallery'),
+            'video-gallery': document.querySelector('.video-gallery'),
+            'audio-gallery': document.querySelector('.audio-gallery')
+        };
+
+        const showContent = (contentType) => {
+            Object.values(galleries).forEach(gallery => gallery.classList.add('hidden'));
+            const galleryToShow = galleries[contentType];
+            if (galleryToShow) {
+                galleryToShow.classList.remove('hidden');
+                galleryToShow.classList.add('animated');
+            }
+        };
+
+        document.getElementById("photoButton").addEventListener("click", () => showContent('photo-gallery'));
+        document.getElementById("videoButton").addEventListener("click", () => showContent('video-gallery'));
+        document.getElementById("audioButton").addEventListener("click", () => showContent('audio-gallery'));
+
+        document.getElementById("logoutButton").addEventListener("click", () => {
+            sessionStorage.removeItem("accessGranted");
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "index.html";
+        });
+    });
+</script>
+</head>
+
+<body style="background-color: #ffd0d7;">
+    <h1>Zeta</h1>
+    <div>
+        <button id="photoButton">Photo</button>
+        <button id="videoButton">Video</button>
+        <button id="audioButton">Audio</button>
+    </div>
+
+    <div class="container">
+        <!-- Photo gallery -->
+        <div class="photo-gallery">
+            <img src="/Jetsukii/Photo/Zeta/Zeta01.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta02.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta03.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta04.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta05.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta06.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta07.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta08.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta09.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta10.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta11.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta12.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta13.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta14.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta15.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta16.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta17.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta18.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta19.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta20.JPG" alt="Jetzeta" class="protected-img">
+            <img src="/Jetsukii/Photo/Zeta/Zeta21.jpg" alt="Jetzeta" class="protected-img">
+        </div>
+
+        <!-- Video gallery -->
+        <div class="video-gallery hidden">
+            <h1>Zeta Dancing</h1> 
+            <video controls class="protected-video" controlsList="nodownload" oncontextmenu="return false;">
+                <source src="/Jetsukii/Video/Zetadancing.mp4" type="video/mp4">
+            </video>
+            <h1>Aku muak!!!</h1> 
+            <video controls class="protected-video" controlsList="nodownload" oncontextmenu="return false;">
+                <source src="/Jetsukii/Video/Zetamuak.mp4" type="video/mp4">
+            </video>
+            <h1>Zeta face emoticon</h1> 
+            <video controls class="protected-video" controlsList="nodownload" oncontextmenu="return false;">
+                <source src="/Jetsukii/Video/Zetaface.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Audio gallery -->
+        <div class="audio-gallery hidden">
+            <h1>Midlaner??</h1> 
+            <audio controls style="width: 300px; align: center;">
+                <source src="/Jetsukii/Audio/midlaner.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</body>
+</html>

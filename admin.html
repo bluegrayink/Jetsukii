@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jetsukii Admin Page</title>
+    <link rel="stylesheet" href="../Jetsukii0/Styles/main.css">
+<style>
+        #buttonContainer { display: none; }
+        #uidInputContainer { display: none; }
+    </style>
+    <script>
+        // Prevent viewing source code using Ctrl+U
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+            }
+        });
+
+       
+    </script>
+</head>
+<body style="background-color: #ffd0d7;">
+    <h1>Jetsukii Admin Page</h1>
+
+<button id="androidButton">Android</button>
+    <button id="iosButton">iOS</button>
+
+    <div id="uidInputContainer">
+        <input type="text" id="uidInput" placeholder="Enter UID">
+        <button id="submitUID">Submit</button>
+    </div>
+    
+    <div id="buttonContainer">
+        <button id="kleeButton">Klee</button>
+        <button id="zetaButton">Zeta</button>
+        <button id="calendarButton">Calendar</button>
+    </div>
+
+    <!-- Status and logs for user interaction -->
+    <div id="status"></div>
+    <div id="log"></div>
+
+    <!-- Load JavaScript application logic -->
+    <script src="../Jetsukii0/JS/admin.js"></script>
+</body>
+</html>

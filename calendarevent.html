@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Event</title>
+    <link rel="stylesheet" href="../Jetsukii/styles/calendar.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const referrer = document.referrer; 
+        const allowedReferrers = ["index.html", "admin.html"]; 
+
+        const isAllowedReferrer = allowedReferrers.some(page => referrer.includes(page));
+        if (!isAllowedReferrer || !localStorage.getItem("isLoggedIn")) {
+            window.location.href = "index.html"; 
+        }
+        const redirectTimeout = 1800000;
+
+        setTimeout(() => {
+            alert("Session expired. Redirecting to homepage...");
+            window.location.href = "index.html";
+        }, redirectTimeout);
+
+            document.addEventListener('contextmenu', (e) => {
+                if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <main class="container">
+        <h1>Jetsukii Calendar Event</h1>
+        <p class="description">
+            Hi semuanya, disini kalian dapat lihat jadwal event aku sepanjang tahun 2025.
+        </p>
+        <div class="calendar-container">
+            <div id="calendar-header0" class="calendar-header0">
+		    <img src="/Jetsukii/Photo/bannercal.jpg" alt="banner">
+            </div>
+            <div id="calendar-header" class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <span id="header-title"></span>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div id="day-row" class="day-row"></div>
+            <div id="calendar-grid" class="calendar-grid"></div>
+        </div>
+        <div id="event-list" class="event-list">
+            <h2>Event Details</h2>
+            <p></p>
+        </div>
+    </main>
+    <script src="../Jetsukii/JS/calendar.js"></script>
+</body>
+</html>
