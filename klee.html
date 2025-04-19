@@ -103,6 +103,23 @@
             localStorage.removeItem("isLoggedIn");
             window.location.href = "index.html";
         });
+
+        // Enable image popup on click
+        const popup = document.getElementById('popup');
+        const popupImg = document.getElementById('popup-img');
+
+        document.querySelectorAll('.photo-gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+                popupImg.src = img.src;
+                popup.classList.remove('hidden');
+            });
+        });
+
+        // Close popup when clicked
+        popup.addEventListener('click', () => {
+            popup.classList.add('hidden');
+            popupImg.src = "";
+        });
     });
     </script>
 </head>
@@ -181,6 +198,5 @@
     <footer style="text-align: center; padding: 15px; margin-top: 30px; font-size: 14px;">
         Created and Design by <strong>Bluegray Ink</strong>
     </footer>
- <script src="JS/slideshow.js"></script>
 </body>
 </html>
