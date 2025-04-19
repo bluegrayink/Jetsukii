@@ -189,6 +189,7 @@ div.animated {
 
 /* Header & Footer */
 header {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -206,6 +207,7 @@ header .home {
 }
 
 footer {
+    position: fixed;
     text-align: center;
     padding: 15px;
     background-color: #ffbac5;
