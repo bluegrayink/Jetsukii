@@ -1,6 +1,7 @@
 const uidToPageMap = {
-    "sparkle.html": ["C4A7FA92", "04870593", "341E0C93", "34D90393", "AYUU123SPA"],
-    "calendarevent.html":["C4F00B93", "84F0F892", "04A80593", "B4F3F892", "AYUU123CAL"]
+    "klee.html": ["26586B1A", "F625391A", "Jet00Klee"],
+    "zeta.html": ["26356B1A", "D6C7711A", "Jet00Zeta"],
+    "calendar.html": ["5605761A","86F56F1A", "Jet00Cal"]
 };
 
 // Elements
