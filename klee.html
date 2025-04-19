@@ -41,42 +41,10 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const referrer = document.referrer;
-      const allowedReferrers = ["index.html", "admin.html"];
-      const isAllowedReferrer = allowedReferrers.some(page => referrer.includes(page));
-
-      if (!isAllowedReferrer || !localStorage.getItem("isLoggedIn")) {
-        window.location.href = "index.html";
-      }
-
-      const redirectTimeout = 1800000;
-      setTimeout(() => {
-        alert("Session expired. Redirecting to homepage...");
-        window.location.href = "index.html";
-      }, redirectTimeout);
 
       document.addEventListener('contextmenu', (e) => {
         if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
           e.preventDefault();
-        }
-      });
-
-      const popup = document.getElementById('popup');
-      const popupImg = document.getElementById('popup-img');
-
-      document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('dragstart', event => event.preventDefault());
-
-        img.addEventListener('click', () => {
-          popupImg.src = img.src;
-          popup.classList.remove('hidden');
-        });
-      });
-
-      popup.addEventListener('click', (e) => {
-        if (e.target.id === 'popup') {
-          popup.classList.add('hidden');
-          popupImg.src = "";
         }
       });
 
@@ -107,36 +75,15 @@
         window.location.href = "index.html";
       });
 
-      const imagePaths = [
-  "Photo/Klee/Klee01.jpeg", "Photo/Klee/Klee02.jpeg", "Photo/Klee/Klee03.jpeg", "Photo/Klee/Klee04.jpeg",
-  "Photo/Klee/Klee05.jpeg", "Photo/Klee/Klee06.jpeg", "Photo/Klee/Klee07.jpeg", "Photo/Klee/Klee08.jpeg",
-  "Photo/Klee/Klee09.jpeg", "Photo/Klee/Klee10.jpeg", "Photo/Klee/Klee11.jpeg", "Photo/Klee/Klee12.jpeg",
-  "Photo/Klee/Klee13.jpeg", "Photo/Klee/Klee14.jpeg", "Photo/Klee/Klee15.jpeg", "Photo/Klee/Klee16.jpeg",
-  "Photo/Klee/Klee17.jpeg", "Photo/Klee/Klee18.jpeg", "Photo/Klee/Klee19.jpeg", "Photo/Klee/Klee20.jpeg",
-  "Photo/Klee/Klee21.jpeg", "Photo/Klee/Klee22.jpeg", "Photo/Klee/Klee23.jpeg", "Photo/Klee/Klee24.jpeg"
-];
-
-let currentSlide = 0;
-const slideshowImg = document.getElementById('slideshow-img');
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + imagePaths.length) % imagePaths.length;
-  slideshowImg.src = imagePaths[currentSlide];
-});
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % imagePaths.length;
-  slideshowImg.src = imagePaths[currentSlide];
-});
     });
   </script>
 </head>
 
 <body style="background-color: #ffd0d7;">
   <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-    <div style="font-weight: bold; font-size: 20px;">Jetsukii</div>
-    <a href="index.html" style="text-decoration: none; color: black; font-size: 16px;">Home</a>
-  </header>
+      <div style="font-weight: bold; font-size: 20px;">Jetsukii</div>
+      <a href="index.html" style="text-decoration: none; color: black; font-size: 16px;">Home</a>
+    </header>
 
   <h1>Klee Halloween</h1>
   <div>
@@ -150,13 +97,10 @@ document.getElementById('nextBtn').addEventListener('click', () => {
     <div class="photo-gallery">
       <div class="slideshow-container">
         <img id="slideshow-img" src="Photo/Klee/Klee01.jpeg" alt="Kleejet" class="protected-img">
-      </div>
-      <div style="text-align: center; margin-top: 10px;">
         <button id="prevBtn">Previous</button>
         <button id="nextBtn">Next</button>
       </div>
     </div>
-  </div>
 
     <!-- Video gallery -->
     <div class="video-gallery hidden">
@@ -179,9 +123,45 @@ document.getElementById('nextBtn').addEventListener('click', () => {
     </div>
   </div>
 
+
   <!-- Footer -->
-  <footer style="text-align: center; padding: 15px; margin-top: 30px; font-size: 14px;">
+   <footer style="text-align: center; padding: 15px; font-size: 14px; background-color: #ffd0d7;">
     Created and Design by <strong>Bluegray Ink</strong>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const imagePaths = [
+        "Photo/Klee/Klee01.jpeg", "Photo/Klee/Klee02.jpeg", "Photo/Klee/Klee03.jpeg", "Photo/Klee/Klee04.jpeg",
+        "Photo/Klee/Klee05.jpeg", "Photo/Klee/Klee06.jpeg", "Photo/Klee/Klee07.jpeg", "Photo/Klee/Klee08.jpeg",
+        "Photo/Klee/Klee09.jpeg", "Photo/Klee/Klee10.jpeg", "Photo/Klee/Klee11.jpeg", "Photo/Klee/Klee12.jpeg",
+        "Photo/Klee/Klee13.jpeg", "Photo/Klee/Klee14.jpeg", "Photo/Klee/Klee15.jpeg", "Photo/Klee/Klee16.jpeg",
+        "Photo/Klee/Klee17.jpeg", "Photo/Klee/Klee18.jpeg", "Photo/Klee/Klee19.jpeg", "Photo/Klee/Klee20.jpeg",
+        "Photo/Klee/Klee21.jpeg", "Photo/Klee/Klee22.jpeg", "Photo/Klee/Klee23.jpeg", "Photo/Klee/Klee24.jpeg"
+      ];
+
+      let currentSlide = 0;
+      const slideshowImg = document.getElementById('slideshow-img');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (slideshowImg && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          currentSlide = (currentSlide - 1 + imagePaths.length) % imagePaths.length;
+          slideshowImg.src = imagePaths[currentSlide];
+        });
+
+        nextBtn.addEventListener('click', () => {
+          currentSlide = (currentSlide + 1) % imagePaths.length;
+          slideshowImg.src = imagePaths[currentSlide];
+        });
+
+       
+      } else {
+        console.error("Elemen slideshow tidak ditemukan.");
+      }
+    });
+  </script>
+
 </body>
 </html>
