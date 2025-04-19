@@ -7,46 +7,42 @@ body {
 }
 
 h1 {
-    margin: 10px;
+    margin: 10px 0;
     font-size: 1.8em;
-    color: #4B4E53;	
+    color: #4B4E53;
 }
 
 h2 {
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0;
     font-size: 1em;
-    color: #4B4E53; 
+    color: #4B4E53;
 }
 
 /* Profile container */
 .profile-container {
     display: flex;
-    align-items: flex-start; /* Align konten ke atas */
-    justify-content: center; /* Pusatkan konten */
-	gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
 }
 
-/* Profile picture */
 .profile-picture {
-    width: 100px; /* Adjust the size as needed */
+    width: 100px;
     height: 100px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensure image maintains aspect ratio */
-    border: 2px solid #999; /* Optional border */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #999;
 }
 
-/* Text container */
 .profile-text {
     display: flex;
-    flex-direction: column; /* Stacks h1 above h2 */
-    justify-content: space-between; /* Space out h1 and h2 vertically */
-    height: 100%; /* Makes sure h1 and h2 take the full height of the parent */
-    text-align: left; /* Align text to the left */
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: left;
 }
 
-/* Gallery container */
+/* Gallery containers */
 .photo-gallery, .video-gallery, .audio-gallery {
     display: flex;
     justify-content: center;
@@ -56,12 +52,15 @@ h2 {
     margin: 20px auto;
 }
 
-/* Image and video styles */
 .photo-gallery img, .video-gallery video {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-gallery video {
+    max-width: 600px;
 }
 
 .audio-gallery audio {
@@ -70,35 +69,29 @@ h2 {
     border-radius: 10px;
 }
 
-.video-gallery video {
-    max-width: 600px;
-}
-
-/* Button styles */
+/* Buttons */
 button {
-            background:  transparent;
-            height:  40px;
-             border:  2px solid #4B4E53;
-             display:  inline-block;
-             float:  none;
-             text-align:  center;
-             width:  100px;
-             padding:  0px;
-             font-size:  16px;
-            color: #4B4E53;
-            cursor: pointer;
-            border-radius: 15px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
+    background: transparent;
+    height: 40px;
+    border: 2px solid #4B4E53;
+    text-align: center;
+    width: 100px;
+    padding: 0;
+    font-size: 16px;
+    color: #4B4E53;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
 
 button:hover {
     background-color: #4B4E53;
     color: #fdfdfd;
 }
 
-.indexBtn{
-width:  150px;
+.indexBtn {
+    width: 150px;
 }
 
 #logoutButton {
@@ -115,94 +108,86 @@ width:  150px;
     background-color: #555;
 }
 
-/* Image container */
+/* Image protection */
 .image-container {
     position: relative;
     display: inline-block;
 }
 
-.protected-img,
-.protected-video {
-    user-select: none; /* Prevent text selection */
-    -webkit-user-drag: none; /* Prevent drag */
+.protected-img, .protected-video {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none; /* Prevent right-click */
 }
 
-/* Overlay to prevent right-click */
-.protected-img::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: transparent;
-    z-index: 2; /* Layer above image */
-    pointer-events: none;
-}
-
-/* Hidden class for sections */
+/* Hidden sections */
 .hidden {
     display: none;
 }
 
- div.animated {
-            position: absolute;
-            visibility: hidden;
-            animation-name: fadeIn;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-        }
+/* Animation */
+div.animated {
+    position: absolute;
+    visibility: hidden;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
 
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(0);}
-            to {opacity: 1; transform: translateY(20px); visibility: visible;}
-        }
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(0);}
+    to {opacity: 1; transform: translateY(20px); visibility: visible;}
+}
 
+/* Layout container */
 .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
+/* Social links */
 .social-icons a {
     display: inline-block;
     text-decoration: none;
-    border: none; /* Hilangkan garis default di sekitar tautan */
-    margin: 0;
+    border: none;
     padding: 5px;
     margin-bottom: 20px;
 }
 
+/* Business & Email section */
 .business-collab {
-    text-align: center; /* Meratakan teks ke tengah */
-    font-family: Arial, sans-serif; /* Sesuaikan dengan font Anda */
+    text-align: center;
+    font-family: Arial, sans-serif;
     margin-bottom: 20px;
 }
 
 .email-section {
-    display: flex; /* Gunakan flexbox untuk menyusun ikon dan teks */
-    justify-content: center; /* Meratakan elemen secara horizontal */
-    align-items: center; /* Meratakan elemen secara vertikal */
-    gap: 8px; /* Menambahkan jarak antara ikon dan teks */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
 .email-section img {
-    width: 24px; /* Sesuaikan ukuran ikon */
+    width: 24px;
     height: 24px;
 }
 
 .email-section span {
-    font-size: 16px; /* Sesuaikan ukuran teks */
-    color: #4B4E53; /* Sesuaikan warna teks */
+    font-size: 16px;
+    color: #4B4E53;
 }
 
+/* Extra Buttons Section */
 .extraButtons {
     display: flex;
-    justify-content: center; /* Menengahkan secara horizontal */
-    align-items: center; /* Menengahkan secara vertikal (opsional) */
+    justify-content: center;
+    align-items: center;
     margin: 20px auto;
 }
 
+/* Header & Footer */
 header {
     display: flex;
     justify-content: space-between;
@@ -214,6 +199,12 @@ header {
     font-size: 20px;
 }
 
+header .title,
+header .home {
+    color: #000;
+    text-decoration: none;
+}
+
 footer {
     text-align: center;
     padding: 15px;
@@ -223,22 +214,7 @@ footer {
     font-size: 14px;
 }
 
-header .title {
-    color: #000;
-}
-
-header .home {
-    color: #000;
-    text-decoration: none;
-}
-
-.photo-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
+/* Photo gallery image */
 .photo-gallery img {
     width: 48%;
     cursor: pointer;
@@ -250,6 +226,7 @@ header .home {
     transform: scale(1.02);
 }
 
+/* Slideshow popup */
 .slideshow-popup {
     position: fixed;
     top: 0;
@@ -297,4 +274,21 @@ header .home {
 
 .slideshow-popup .next-btn {
     right: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-gallery img {
+        width: 100%;
+    }
+
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+    }
 }
