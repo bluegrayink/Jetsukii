@@ -50,12 +50,26 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const referrer = document.referrer; 
+        const allowedReferrers = ["index.html", "admin.html"];
 
-      document.addEventListener('contextmenu', (e) => {
-        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
-          e.preventDefault();
+        const isAllowedReferrer = allowedReferrers.some(page => referrer.includes(page));
+        if (!isAllowedReferrer || !localStorage.getItem("isLoggedIn")) {
+            window.location.href = "index.html"; 
         }
-      });
+
+        const redirectTimeout = 1800000;
+
+        setTimeout(() => {
+            alert("Session expired. Redirecting to homepage...");
+            window.location.href = "index.html";
+        }, redirectTimeout);
+
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                e.preventDefault();
+            }
+        });
 
       const galleries = {
         'photo-gallery': document.querySelector('.photo-gallery'),
