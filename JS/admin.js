@@ -71,4 +71,4 @@ submitUID.addEventListener("click", () => validateUID(uidInput.value));
 // Event listeners for direct page navigation
 kleeButton.addEventListener("click", () => window.location.href = "klee.html");
 zetaButton.addEventListener("click", () => window.location.href = "zeta.html");
-calendarButton.addEventListener("click", () => window.location.href = "calendarevent.html");
+calendarButton.addEventListener("click", () => window.location.href = "calendar.html");
