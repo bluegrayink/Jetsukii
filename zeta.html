@@ -9,52 +9,47 @@
   <link rel="stylesheet" href="Styles/main.css">
 
   <style>
-    .hidden {
-      display: none;
-    }
+  .hidden {
+    display: none;
+  }
 
-    .container {
-      position: relative;
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
-    div.animated {
-      position: absolute;
-      visibility: hidden;
-      animation-name: fadeIn;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
-    }
+  div.animated {
+    position: absolute;
+    visibility: hidden;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(0);}
-      to {opacity: 1; transform: translateY(20px); visibility: visible;}
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(0);
     }
+    to {
+      opacity: 1;
+      transform: translateY(20px);
+      visibility: visible;
+    }
+  }
 
-    img, video {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const referrer = document.referrer; 
-        const allowedReferrers = ["index.html", "admin.html"];
-
-        const isAllowedReferrer = allowedReferrers.some(page => referrer.includes(page));
-        if (!isAllowedReferrer || !localStorage.getItem("isLoggedIn")) {
-            window.location.href = "index.html"; 
-        }
-
-        const redirectTimeout = 1800000;
-
-        setTimeout(() => {
-            alert("Session expired. Redirecting to homepage...");
-            window.location.href = "index.html";
-        }, redirectTimeout);
 
       document.addEventListener('contextmenu', (e) => {
         if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
@@ -94,11 +89,13 @@
 </head>
 
 <body style="background-color: #ffd0d7;">
-  <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-      <div style="font-weight: bold; font-size: 20px;">Jetsukii</div>
-      <a href="index.html" style="text-decoration: none; color: black; font-size: 16px;">Home</a>
-    </header>
+  <div style="display: flex; justify-content: center; align-items: center; padding: 5px;">
+    <a href="index.html" style="text-decoration: none; font-size: 20px;"><img src="Photo/icon/home-gray-icon.png" 
 
+alt="home" class="protected-img" style="width:32px;height:32px;">
+
+</a>
+  </div>
   <h1>Zeta</h1>
   <div>
     <button id="photoButton">Photo</button>
@@ -110,19 +107,19 @@
     <!-- Photo gallery -->
     <div class="photo-gallery">
       <div class="slideshow-container">
+	<i id="prevBtn"><img src="Photo/icon/angle-left-gray-icon.png"></i>
         <img id="slideshow-img" src="Photo/Zeta/Zeta01.JPG" alt="Kleejet" class="protected-img">
-        <button id="prevBtn">Previous</button>
-        <button id="nextBtn">Next</button>
+	<i id="nextBtn"><img src="Photo/icon/angle-right-gray-icon.png"></i>
       </div>
     </div>
 
     <!-- Video gallery -->
-   <div class="video-gallery hidden">
-            <h1>Zeta Dancing</h1> 
-            <video controls class="protected-video" controlsList="nodownload" oncontextmenu="return false;">
-                <source src="Video/Zetadancing.mp4" type="video/mp4">
-            </video>
-            <h1>Aku muak!!!</h1> 
+    <div class="video-gallery hidden">
+      <h1>Zeta Dancing</h1>
+      <video controls class="protected-video" controlsList="nodownload" oncontextmenu="return false;">
+        <source src="Video/Zetadancing.mp4" type="video/mp4">
+      </video>
+      <h1>Aku muak!!!</h1> 
             <video controls class="protected-video" controlsList="nodownload" oncontextmenu="return false;">
                 <source src="Video/Zetamuak.mp4" type="video/mp4">
             </video>
@@ -130,55 +127,93 @@
             <video controls class="protected-video" controlsList="nodownload" oncontextmenu="return false;">
                 <source src="Video/Zetaface.mp4" type="video/mp4">
             </video>
-        </div>
+    </div>
 
     <!-- Audio gallery -->
     <div class="audio-gallery hidden">
-            <h1>Midlaner??</h1> 
-            <audio controls style="width: 300px; align: center;">
-                <source src="Audio/midlaner.mp3" type="audio/mpeg">
-            </audio>
-        </div>
+      <h1>Midlaner??</h1>
+      <audio controls style="width: 300px;">
+        <source src="Audio/midlaner.mp3" type="audio/mpeg">
+      </audio>
+    </div>
   </div>
 
-
-  <!-- Footer -->
-   <footer style="text-align: center; padding: 15px; font-size: 14px; background-color: #ffd0d7;">
-    Created and Design by <strong>Bluegray Ink</strong>
-  </footer>
+ <!-- Popup Image Viewer -->
+<div id="popupViewer" class="slideshow-popup hidden">
+  <span id="closePopup" class="close-btn">&times;</span>
+  <img id="popupImg" src="" alt="Popup Image">
+</div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const imagePaths = [
-        "Photo/Zeta/Zeta01.JPG", "Photo/Zeta/Zeta02.JPG", "Photo/Zeta/Zeta03.JPG", "Photo/Zeta/Zeta04.JPG",
-        "Photo/Zeta/Zeta05.JPG", "Photo/Zeta/Zeta06.JPG", "Photo/Zeta/Zeta07.JPG", "Photo/Zeta/Zeta08.JPG",
-        "Photo/Zeta/Zeta09.JPG", "Photo/Zeta/Zeta10.JPG", "Photo/Zeta/Zeta11.JPG", "Photo/Zeta/Zeta12.JPG",
-        "Photo/Zeta/Zeta13.JPG", "Photo/Zeta/Zeta14.JPG", "Photo/Zeta/Zeta15.JPG", "Photo/Zeta/Zeta16.JPG",
-        "Photo/Zeta/Zeta17.JPG", "Photo/Zeta/Zeta18.JPG", "Photo/Zeta/Zeta19.JPG", "Photo/Zeta/Zeta20.JPG"
-      ];
+  document.addEventListener("DOMContentLoaded", function () {
+    const imagePaths = [
+      "Photo/Zeta/Zeta01.JPG", "Photo/Zeta/Zeta02.JPG", "Photo/Zeta/Zeta03.JPG", "Photo/Zeta/Zeta04.JPG",
+      "Photo/Zeta/Zeta05.JPG", "Photo/Zeta/Zeta06.JPG", "Photo/Zeta/Zeta07.JPG", "Photo/Zeta/Zeta08.JPG",
+      "Photo/Zeta/Zeta09.JPG", "Photo/Zeta/Zeta10.JPG", "Photo/Zeta/Zeta11.JPG", "Photo/Zeta/Zeta12.JPG",
+      "Photo/Zeta/Zeta13.JPG", "Photo/Zeta/Zeta14.JPG", "Photo/Zeta/Zeta15.JPG", "Photo/Zeta/Zeta16.JPG",
+      "Photo/Zeta/Zeta17.JPG", "Photo/Zeta/Zeta18.JPG", "Photo/Zeta/Zeta19.JPG", "Photo/Zeta/Zeta20.JPG",
+      "Photo/Zeta/Zeta21.JPG", "Photo/Zeta/Zeta22.JPG", "Photo/Zeta/Zeta23.JPG", "Photo/Zeta/Zeta24.JPG"
+    ];
 
-      let currentSlide = 0;
-      const slideshowImg = document.getElementById('slideshow-img');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
+    let currentSlide = 0;
+    const slideshowImg = document.getElementById('slideshow-img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-      if (slideshowImg && prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-          currentSlide = (currentSlide - 1 + imagePaths.length) % imagePaths.length;
-          slideshowImg.src = imagePaths[currentSlide];
-        });
+    if (slideshowImg && prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + imagePaths.length) % imagePaths.length;
+        slideshowImg.src = imagePaths[currentSlide];
+      });
 
-        nextBtn.addEventListener('click', () => {
-          currentSlide = (currentSlide + 1) % imagePaths.length;
-          slideshowImg.src = imagePaths[currentSlide];
-        });
+      nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % imagePaths.length;
+        slideshowImg.src = imagePaths[currentSlide];
+      });
+    } else {
+      console.error("Elemen slideshow tidak ditemukan.");
+    }
 
-       
-      } else {
-        console.error("Elemen slideshow tidak ditemukan.");
+    // Popup image logic
+    const popup = document.getElementById('popupViewer');
+    const popupImg = document.getElementById('popupImg');
+    const closePopup = document.getElementById('closePopup');
+
+    // Buka popup saat slideshow image diklik
+    slideshowImg.addEventListener('click', () => {
+      popupImg.src = imagePaths[currentSlide];
+      popup.classList.remove('hidden');
+    });
+
+    // Tutup popup saat klik tombol close
+    if (closePopup) {
+      closePopup.addEventListener('click', () => {
+        popup.classList.add('hidden');
+        popupImg.src = "";
+      });
+    }
+
+    // Tutup popup saat klik luar area gambar
+    popup.addEventListener('click', (e) => {
+      if (e.target.id === 'popupViewer') {
+        popup.classList.add('hidden');
+        popupImg.src = "";
       }
     });
-  </script>
+
+slideshowImg.addEventListener('click', () => {
+  console.log("Popup dibuka");
+  popupImg.src = imagePaths[currentSlide];
+  popup.classList.remove('hidden');
+});
+
+    // Disable drag pada semua gambar
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('dragstart', event => event.preventDefault());
+    });
+  });
+</script>
+
 
 </body>
 </html>
