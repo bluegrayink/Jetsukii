@@ -46,7 +46,9 @@
     height: auto;
   }
 </style>
-<script>
+
+
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
 
       document.addEventListener('contextmenu', (e) => {
@@ -83,13 +85,16 @@
       });
 
     });
-</script>
+  </script>
 </head>
 
 <body style="background-color: #ffd0d7;">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 5px;">
-    <div style="font-weight: bold; font-size: 20px;">Jetsukii</div>
-    <a href="index.html" style="text-decoration: none; color: black; font-size: 16px;">Home</a>
+  <div style="display: flex; justify-content: center; align-items: center; padding: 5px;">
+    <a href="index.html" style="text-decoration: none; font-size: 20px;"><img src="Photo/icon/home-gray-icon.png" 
+
+alt="home" class="protected-img" style="width:32px;height:32px;">
+
+</a>
   </div>
   <h1>Klee Halloween</h1>
   <div>
@@ -102,9 +107,9 @@
     <!-- Photo gallery -->
     <div class="photo-gallery">
       <div class="slideshow-container">
-	      <i id="prevBtn"><img src="Photo/icon/angle-left-gray-icon.png"></i>
+	<i id="prevBtn"><img src="Photo/icon/angle-left-gray-icon.png"></i>
         <img id="slideshow-img" src="Photo/Klee/Klee01.jpeg" alt="Kleejet" class="protected-img">
-	      <i id="nextBtn"><img src="Photo/icon/angle-right-gray-icon.png"></i>
+	<i id="nextBtn"><img src="Photo/icon/angle-right-gray-icon.png"></i>
       </div>
     </div>
 
@@ -128,9 +133,7 @@
       </audio>
     </div>
   </div>
-  <div style="text-align: center; padding: 5px;">
-    Created and Design by <strong>Bluegray Ink</strong>
-  </div>
+
  <!-- Popup Image Viewer -->
 <div id="popupViewer" class="slideshow-popup hidden">
   <span id="closePopup" class="close-btn">&times;</span>
@@ -194,11 +197,11 @@
       }
     });
 
-    slideshowImg.addEventListener('click', () => {
-      console.log("Popup dibuka");
-      popupImg.src = imagePaths[currentSlide];
-      popup.classList.remove('hidden');
-    });
+slideshowImg.addEventListener('click', () => {
+  console.log("Popup dibuka");
+  popupImg.src = imagePaths[currentSlide];
+  popup.classList.remove('hidden');
+});
 
     // Disable drag pada semua gambar
     document.querySelectorAll('img').forEach(img => {
@@ -206,5 +209,7 @@
     });
   });
 </script>
+
+
 </body>
 </html>
