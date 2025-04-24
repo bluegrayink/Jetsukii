@@ -4,49 +4,49 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-
 h1 {
-    margin: 10px 0;
+    margin: 10px;
     font-size: 1.8em;
-    color: #4B4E53;
+    color: #4B4E53;	
 }
 
 h2 {
-    margin: 0;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     font-size: 1em;
-    color: #4B4E53;
+    color: #4B4E53; 
 }
 
 /* Profile container */
 .profile-container {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 5px;
+    align-items: flex-start; /* Align konten ke atas */
+    justify-content: center; /* Pusatkan konten */
+	gap: 5px;
 }
 
+/* Profile picture */
 .profile-picture {
-    width: 100px;
+    width: 100px; /* Adjust the size as needed */
     height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #999;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensure image maintains aspect ratio */
+    border: 2px solid #999; /* Optional border */
 }
 
+/* Text container */
 .profile-text {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    text-align: left;
+    flex-direction: column; /* Stacks h1 above h2 */
+    justify-content: space-between; /* Space out h1 and h2 vertically */
+    height: 100%; /* Makes sure h1 and h2 take the full height of the parent */
+    text-align: left; /* Align text to the left */
 }
 
-/* Gallery containers */
+/* Gallery container */
 .photo-gallery, .video-gallery, .audio-gallery {
     display: flex;
     justify-content: center;
@@ -56,19 +56,12 @@ h2 {
     margin: 20px auto;
 }
 
+/* Image and video styles */
 .photo-gallery img, .video-gallery video {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-i img {
-    box-shadow : none !important;
-}
-
-.video-gallery video {
-    max-width: 600px;
 }
 
 .audio-gallery audio {
@@ -77,29 +70,35 @@ i img {
     border-radius: 10px;
 }
 
-/* Buttons */
-button {
-    background: transparent;
-    height: 40px;
-    border: 2px solid #4B4E53;
-    text-align: center;
-    width: 100px;
-    padding: 0;
-    font-size: 16px;
-    color: #4B4E53;
-    cursor: pointer;
-    border-radius: 15px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+.video-gallery video {
+    max-width: 600px;
 }
+
+/* Button styles */
+button {
+            background:  transparent;
+            height:  40px;
+             border:  2px solid #4B4E53;
+             display:  inline-block;
+             float:  none;
+             text-align:  center;
+             width:  100px;
+             padding:  0px;
+             font-size:  16px;
+            color: #4B4E53;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
 
 button:hover {
     background-color: #4B4E53;
     color: #fdfdfd;
 }
 
-.indexBtn {
-    width: 150px;
+.indexBtn{
+width:  150px;
 }
 
 #logoutButton {
@@ -116,171 +115,90 @@ button:hover {
     background-color: #555;
 }
 
-/* Image protection */
+/* Image container */
 .image-container {
     position: relative;
     display: inline-block;
 }
 
-.protected-img, .protected-video {
-    user-select: none;
-    -webkit-user-drag: none;
+.protected-img,
+.protected-video {
+    user-select: none; /* Prevent text selection */
+    -webkit-user-drag: none; /* Prevent drag */
+}
+
+/* Overlay to prevent right-click */
+.protected-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 2; /* Layer above image */
     pointer-events: none;
 }
 
-/* Hidden sections */
+/* Hidden class for sections */
 .hidden {
     display: none;
 }
 
-/* Animation */
-div.animated {
-    position: absolute;
-    visibility: hidden;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
+ div.animated {
+            position: absolute;
+            visibility: hidden;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(0);}
-    to {opacity: 1; transform: translateY(20px); visibility: visible;}
-}
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(0);}
+            to {opacity: 1; transform: translateY(20px); visibility: visible;}
+        }
 
-/* Layout container */
 .container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-/* Social links */
 .social-icons a {
     display: inline-block;
     text-decoration: none;
-    border: none;
+    border: none; /* Hilangkan garis default di sekitar tautan */
+    margin: 0;
     padding: 5px;
     margin-bottom: 20px;
 }
 
-/* Business & Email section */
 .business-collab {
-    text-align: center;
-    font-family: Arial, sans-serif;
+    text-align: center; /* Meratakan teks ke tengah */
+    font-family: Arial, sans-serif; /* Sesuaikan dengan font Anda */
     margin-bottom: 20px;
 }
 
 .email-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+    display: flex; /* Gunakan flexbox untuk menyusun ikon dan teks */
+    justify-content: center; /* Meratakan elemen secara horizontal */
+    align-items: center; /* Meratakan elemen secara vertikal */
+    gap: 8px; /* Menambahkan jarak antara ikon dan teks */
 }
 
 .email-section img {
-    width: 24px;
+    width: 24px; /* Sesuaikan ukuran ikon */
     height: 24px;
 }
 
 .email-section span {
-    font-size: 16px;
-    color: #4B4E53;
+    font-size: 16px; /* Sesuaikan ukuran teks */
+    color: #4B4E53; /* Sesuaikan warna teks */
 }
 
-/* Extra Buttons Section */
 .extraButtons {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Menengahkan secara horizontal */
+    align-items: center; /* Menengahkan secara vertikal (opsional) */
     margin: 20px auto;
-}
-
-
-/* Photo gallery image */
-.photo-gallery img {
-    width: 85%;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.photo-gallery img:hover {
-    transform: scale(1.02);
-}
-
-/* Slideshow popup */
-.slideshow-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.slideshow-popup img {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-.slideshow-popup .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.slideshow-popup .prev-btn {
-    left: 10px;
-}
-
-.slideshow-popup .next-btn {
-    right: 10px;
-}
-
-.slideshow-container i img {
-  width: 24px;
-  height: auto;
-  cursor: pointer;
-}
-
-.slideshow-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-    .profile-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-picture {
-        width: 80px;
-        height: 80px;
-    }
 }
